@@ -22,6 +22,7 @@ build/
 
 # Output files
 output.txt
+sample_audio.mp3
 
 # IDE specific files
 .idea/
