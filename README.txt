@@ -17,5 +17,5 @@ The directory structure for the project is as follows:
 If you are cloning the repository from GitHub, use the following command:
 
 ```bash
-git clone https://github.com/your-username/audio-to-text-transcription.git
-cd audio-to-text-transcription
+git clone https://github.com/LorenzoRegalzi/GroqScribe.git
+cd GroqScribe
