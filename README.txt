@@ -18,4 +18,4 @@ If you are cloning the repository from GitHub, use the following command:
 
 ```bash
 git clone https://github.com/LorenzoRegalzi/GroqScribe.git
-cd audio-to-text-transcription
+cd GroqScribe
