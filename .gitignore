@@ -24,6 +24,10 @@ build/
 output.txt
 sample_audio.mp3
 
+#personal
+study/
+video/
+
 # IDE specific files
 .idea/
 .vscode/
