@@ -3,7 +3,7 @@ from groq import Groq
 from dotenv import load_dotenv
 from moviepy.editor import VideoFileClip
 
-mp4_file_name = "FileName.mp4"
+mp4_file_name = "video.mp4"
 mp3_file_name = "sample_audio.mp3"
 
 # Load environment variables from .env file
@@ -57,12 +57,17 @@ print("File successfully converted")
 # Open the converted audio file and send it for transcription
 with open(filename, "rb") as file:
     transcription = client.audio.transcriptions.create(
-        file=(filename, file.read()),  # Required audio file
-        model="whisper-large-v3",  # Model for transcription
-        prompt="Specify context or spelling",  # Optional context prompt
-        response_format="json",  # Response format
-        language="en",  # Language of the audio
-        temperature=0.0  # Decoding temperature
+      file=(filename, file.read()), # Required audio file
+
+      model="distil-whisper-large-v3-en", # Required model to use for transcription
+
+      prompt="Specify context or spelling",  # Optional
+
+      response_format="json",  # Optional
+
+      language="en",  # Optional
+
+      temperature=0.0  # Optional
     )
 
     # Format the transcribed text
@@ -70,7 +75,7 @@ with open(filename, "rb") as file:
     formatted_text = add_newline_every_50_chars(formatted_text)
 
     # Save the formatted text to a file
-    output_file = mp4FileName + ".txt"
+    output_file = mp4_file_name + ".txt"
     with open(output_file, "w") as text_file:
-        text_file.write(formatted_text)
+        text_file.write(transcription.text)
         print(f"Transcript saved in {output_file}")
