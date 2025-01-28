@@ -3,7 +3,7 @@ from groq import Groq
 from dotenv import load_dotenv
 from moviepy.editor import VideoFileClip
 
-mp4_file_name = "video.mp4"
+mp4_file_name = "video/2/System Services Linkers and Loaders.mp4"
 mp3_file_name = "sample_audio.mp3"
 
 # Load environment variables from .env file
